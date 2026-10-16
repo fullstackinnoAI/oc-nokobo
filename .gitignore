@@ -1,2 +1,11 @@
 .DS_Store
 screenshots/
+.env
+**/.env
+apply-api/.vercel
+apply-api/.wrangler
+hao-wen-ti/node_modules
+hao-wen-ti/out
+ocapp/data
+__pycache__/
+*.pyc

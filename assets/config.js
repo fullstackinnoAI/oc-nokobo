@@ -5,7 +5,8 @@
  */
 window.SITE_CONFIG = {
   brandName: "栖灵",        // 品牌名（占位）
-  pageVersion: "v1.3",
+  pageVersion: "v1.6",
   contactEmail: null,       // 上线前填写真实地址；为 null 时页面不渲染联系链接
-  privacyUrl: null          // 上线前填写隐私说明地址；为 null 时不渲染
+  privacyUrl: null,         // 上线前填写隐私说明地址；为 null 时不渲染
+  applyUrl: "https://oc-nokobo-apply.malleable-safflower.workers.dev"
 };

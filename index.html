@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Landing page v1.2 · 内测招募页 · 品牌名由 assets/config.js 注入 -->
 <title>栖灵 · 一个角色，持续生长的内容</title>
-<meta name="description" content="为原创角色、个人 IP 与品牌 IP 而造：定义形象、性格与声音，让每一次对话、视频和动画都延续同一个角色。产品筹备中，内测招募（演示）。">
+<meta name="description" content="为原创角色、个人 IP 与品牌 IP 而造：定义形象、性格与声音，让每一次对话、视频和动画都延续同一个角色。产品筹备中，内测招募。">
 <meta name="theme-color" content="#F4F1EA">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="assets/img/hero-pair.png">
@@ -42,8 +42,12 @@
       <li><a href="#content">内容生成</a></li>
       <li><a href="#cases">客户案例</a></li>
       <li><a href="#companion">随身陪伴</a></li>
+      <li class="only-mobile"><a href="/login">登录</a></li>
     </ul>
-    <a class="btn btn-green btn-sm" href="#early-access" data-apply>申请内测</a>
+    <div class="nav-actions">
+      <a class="nav-login" href="/login">登录</a>
+      <a class="btn btn-green btn-sm" href="#early-access" data-apply>申请内测</a>
+    </div>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="打开菜单"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -248,17 +252,12 @@
 </section>
 </main>
 
-<!--
-  ⚠ 演示表单 / MOCK FORM — 不收集任何数据。
-  - 无 action、无 fetch/XHR、不写 localStorage/cookie；提交时 JS preventDefault，只做本地格式校验。
-  - 不显示虚假的“提交成功”。正式开放前需接入真实后端、邮箱确认与隐私说明（见 README）。
--->
 <dialog class="apply" id="applyDlg" aria-labelledby="applyTitle">
-  <form class="apply-in" id="waitlist" novalidate method="dialog">
+  <form class="apply-in" id="waitlist" novalidate>
     <button class="dlg-x" type="button" id="dlgClose" aria-label="关闭">×</button>
     <h3 id="applyTitle">申请内测</h3>
     <p class="muted" style="font-size:15px">留下邮箱，告诉我们你最想让角色实现什么。申请不保证获得资格，无需付款。</p>
-    <p class="demo-banner"><b>演示表单：</b>申请尚未开放，填写内容不会被发送或保存。</p>
+    <p class="demo-banner" id="applyNote"><b>名单：</b>提交后会记入内测申请表，只保存邮箱、身份、想体验的能力和一句话。</p>
     <div class="f-row">
       <label for="email">邮箱 <span class="muted" style="font-weight:400">（必填）</span></label>
       <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="emailErr">
@@ -280,10 +279,10 @@
       <p class="hint">最多 300 字，请勿填写敏感个人信息。</p>
     </div>
     <div class="f-row">
-      <label class="consent"><input type="checkbox" id="consent">我已阅读隐私说明并同意用于本次申请。（隐私说明将在申请开放前公布）</label>
+      <label class="consent"><input type="checkbox" id="consent">我同意将以上信息用于本次内测申请。</label>
       <p class="err" id="consentErr" aria-live="polite"></p>
     </div>
-    <div class="dlg-actions"><button class="btn btn-green" type="submit" id="submitBtn">提交内测申请（演示）</button></div>
+    <div class="dlg-actions"><button class="btn btn-green" type="submit" id="submitBtn">提交内测申请</button></div>
     <p class="form-status" id="formStatus" role="status"></p>
   </form>
 </dialog>

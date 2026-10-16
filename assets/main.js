@@ -1,4 +1,4 @@
-/* 内测招募页 · main.js v1.2 — vanilla JS，无依赖、无任何网络请求 */
+/* 内测招募页 · main.js v1.6 */
 (function () {
   "use strict";
   var CFG = window.SITE_CONFIG || { brandName: "栖灵", pageVersion: "v1.3" };
@@ -9,7 +9,14 @@
   /* 品牌名：唯一来源 assets/config.js */
   $$("[data-brand]").forEach(function (el) { el.textContent = CFG.brandName; });
   document.title = CFG.brandName + " · 一个角色，持续生长的内容";
-  $("#ver").textContent = CFG.pageVersion || "v1.3";
+  $("#ver").textContent = CFG.pageVersion || "v1.6";
+  if (/\.github\.io$/.test(location.hostname)) {
+    $$("a[href='/login']").forEach(function (el) {
+      var li = el.closest && el.closest("li");
+      if (li) li.remove();
+      else el.remove();
+    });
+  }
   // 仅在真实配置后渲染联系方式/隐私链接，绝不伪造
   var fc = $("#footContact"), parts = [];
   if (CFG.contactEmail) parts.push('<a href="mailto:' + CFG.contactEmail + '">' + CFG.contactEmail + "</a>");
@@ -49,23 +56,63 @@
   $("#dlgClose").addEventListener("click", function () { dlg.close(); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
 
-  /* 演示表单：MOCK ONLY — 不发送、不存储。保留输入，不显示虚假成功。 */
+  /* 申请表：有 applyUrl 时写入飞书；没有地址时不发送，也不假装成功。 */
+  var ROLE_LABEL = { creator: "创作者", ip: "IP 持有者 / 品牌", asset: "资产制作伙伴", other: "其他" };
+  var WANT_LABEL = { persona: "角色设定", voice: "专属声音", content: "视频与动画", device: "随身设备" };
+  if (!CFG.applyUrl) {
+    var note = $("#applyNote");
+    if (note) note.innerHTML = "<b>尚未接通：</b>申请地址还没配置，现在提交不会发送或保存。";
+  }
   $("#waitlist").addEventListener("submit", function (e) {
     e.preventDefault();
     var email = $("#email"), consent = $("#consent");
     var okMail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
     $("#emailErr").textContent = okMail ? "" : "请填写有效邮箱";
     email.setAttribute("aria-invalid", String(!okMail));
-    $("#consentErr").textContent = consent.checked ? "" : "请阅读并确认隐私说明后再提交";
+    $("#consentErr").textContent = consent.checked ? "" : "请确认同意后再提交";
     var st = $("#formStatus"); st.classList.remove("show");
     if (!okMail) return email.focus();
     if (!consent.checked) return consent.focus();
-    var btn = $("#submitBtn"); btn.disabled = true; btn.textContent = "正在校验…";
-    setTimeout(function () {
-      btn.disabled = false; btn.textContent = "提交内测申请（演示）";
-      st.textContent = "演示模式：格式校验已通过，但申请尚未开放——没有任何信息被发送或保存。";
+    if (!CFG.applyUrl) {
+      st.textContent = "申请地址还没配置，这次没有发送。";
       st.classList.add("show");
-    }, 400);
+      return;
+    }
+    var roles = $$("input[name=role]:checked").map(function (el) { return ROLE_LABEL[el.value] || el.value; });
+    var wants = $$("input[name=want]:checked").map(function (el) { return WANT_LABEL[el.value] || el.value; });
+    var btn = $("#submitBtn");
+    btn.disabled = true;
+    btn.textContent = "正在提交…";
+    fetch(CFG.applyUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: email.value.trim(),
+        roles: roles,
+        wants: wants,
+        note: $("#note").value.trim(),
+        consent: true
+      })
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (data) {
+        return { ok: res.ok && data.ok, message: data.message };
+      });
+    }).then(function (result) {
+      btn.disabled = false;
+      btn.textContent = "提交内测申请";
+      if (result.ok) {
+        st.textContent = "已收到。申请不代表获得测试资格，我们会用这个邮箱联系你。";
+        $("#waitlist").reset();
+      } else {
+        st.textContent = result.message || "暂时没能提交，请稍后再试。";
+      }
+      st.classList.add("show");
+    }).catch(function () {
+      btn.disabled = false;
+      btn.textContent = "提交内测申请";
+      st.textContent = "网络没有连上，请稍后再试。这次没有提交成功。";
+      st.classList.add("show");
+    });
   });
 
   /* 衍生视频：静音循环 0:02–0:06；播放键 = 开声从头完整播放 / 暂停 */
