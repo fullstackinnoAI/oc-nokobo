@@ -1,7 +1,7 @@
 /* 内测招募页 · main.js v1.2 — vanilla JS，无依赖、无任何网络请求 */
 (function () {
   "use strict";
-  var CFG = window.SITE_CONFIG || { brandName: "栖灵", pageVersion: "v1.2" };
+  var CFG = window.SITE_CONFIG || { brandName: "栖灵", pageVersion: "v1.3" };
   var $ = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -9,7 +9,7 @@
   /* 品牌名：唯一来源 assets/config.js */
   $$("[data-brand]").forEach(function (el) { el.textContent = CFG.brandName; });
   document.title = CFG.brandName + " · 一个角色，持续生长的内容";
-  $("#ver").textContent = CFG.pageVersion || "v1.2";
+  $("#ver").textContent = CFG.pageVersion || "v1.3";
   // 仅在真实配置后渲染联系方式/隐私链接，绝不伪造
   var fc = $("#footContact"), parts = [];
   if (CFG.contactEmail) parts.push('<a href="mailto:' + CFG.contactEmail + '">' + CFG.contactEmail + "</a>");
