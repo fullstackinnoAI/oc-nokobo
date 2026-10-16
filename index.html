@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Landing page v1.2 · 内测招募页 · 品牌名由 assets/config.js 注入 -->
+<title>栖灵 · 一个角色，持续生长的内容</title>
+<meta name="description" content="为原创角色、个人 IP 与品牌 IP 而造：定义形象、性格与声音，让每一次对话、视频和动画都延续同一个角色。产品筹备中，内测招募（演示）。">
+<meta name="theme-color" content="#F4F1EA">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="assets/img/hero-pair.png">
+<link rel="stylesheet" href="assets/styles.css">
+<script src="assets/config.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1.5c.7 5 4.5 8.8 9.5 9.5-5 .7-8.8 4.5-9.5 9.5-.7-5-4.5-8.8-9.5-9.5 5-.7 8.8-4.5 9.5-9.5z" fill="currentColor"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4.2" fill="currentColor"/><path d="M3.5 21c.8-4.6 4.2-7 8.5-7s7.7 2.4 8.5 7z" fill="currentColor"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M3 10v4M7 7v10M11 3v18M15 7v10M19 10v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4l-1 1M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1-1" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" fill="none"/></symbol>
+  <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5H10l2 2h7.5A1.5 1.5 0 0 1 21 8.5v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5z" stroke="currentColor" stroke-width="1.8" fill="none"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 16v4M8 20h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 2.8l2 1.9 2.7-.4.9 2.6 2.4 1.4-.9 2.6.9 2.6-2.4 1.4-.9 2.6-2.7-.4-2 1.9-2-1.9-2.7.4-.9-2.6L4 15.1l.9-2.6L4 9.9l2.4-1.4.9-2.6 2.7.4z" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linejoin="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z" stroke="currentColor" stroke-width="1.9" fill="none" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="12" rx="3.5" stroke="currentColor" stroke-width="1.9" fill="none"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.9" fill="none"/><path d="M8 8l8 8M16 8l-8 8" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-ne" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M7 4.5h3.5v15H7zM13.5 4.5H17v15h-3.5z" fill="currentColor"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5" stroke="currentColor" stroke-width="1.9" fill="none"/><path d="M10.5 18.5h3" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></symbol>
+  <symbol id="i-watch" viewBox="0 0 24 24"><rect x="5.5" y="6.5" width="13" height="11" rx="3.5" stroke="currentColor" stroke-width="1.9" fill="none"/><path d="M8.5 6.5l1-4h5l1 4M8.5 17.5l1 4h5l1-4" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" fill="none"/><circle cx="12" cy="12" r="1.6" fill="currentColor"/></symbol>
+</svg>
+
+<header class="nav" id="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="返回顶部"><svg aria-hidden="true"><use href="#i-spark"/></svg><span data-brand>栖灵</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#create">角色创作</a></li>
+      <li><a href="#content">内容生成</a></li>
+      <li><a href="#cases">客户案例</a></li>
+      <li><a href="#companion">随身陪伴</a></li>
+    </ul>
+    <a class="btn btn-green btn-sm" href="#early-access" data-apply>申请内测</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="打开菜单"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- 1 · Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <p class="kicker"><i></i>为原创角色、个人 IP 与品牌 IP 而造</p>
+      <h1>一个角色，<br><em>持续生长的内容。</em></h1>
+      <p class="lede">定义形象、性格与声音。<br>让每一次对话、视频和动画，<br>都延续同一个角色。</p>
+      <div class="actions">
+        <a class="btn btn-green" href="#early-access" data-apply>申请内测</a>
+        <a class="link-arrow" href="#cases">看看客户案例 <svg width="16" height="16" aria-hidden="true"><use href="#i-ne"/></svg></a>
+      </div>
+      <p class="note">内测筹备中 · 产品概念展示</p>
+    </div>
+    <div class="hero-art">
+      <span class="halo" aria-hidden="true"></span>
+      <span class="ground" aria-hidden="true"></span>
+      <svg class="deco" style="left:8%;top:18%;width:22px;height:22px" aria-hidden="true"><use href="#i-spark"/></svg>
+      <svg class="deco" style="right:6%;top:8%;width:16px;height:16px" aria-hidden="true"><use href="#i-spark"/></svg>
+      <img class="pair" src="assets/img/hero-pair.png" width="640" height="676" alt="用户提供的 IP 形象「白狮」：戴 R 字棒球帽的白发猫耳少女与白发猫耳少年，身穿藏青色外套">
+      <div class="hero-chips">
+        <span class="chip chip-a"><svg aria-hidden="true"><use href="#i-user"/></svg>角色设定</span>
+        <span class="chip chip-b"><svg aria-hidden="true"><use href="#i-wave"/></svg>专属声音</span>
+        <span class="chip chip-c"><svg aria-hidden="true"><use href="#i-link"/></svg>内容一致性</span>
+      </div>
+      <p class="hero-cap">创业少年少女 · 白狮</p>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · 先定义 TA -->
+<section class="sec define" id="create">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker"><i></i>角色档案</p>
+      <h2>先定义 TA，<br>再让 TA 表达。</h2>
+      <p class="intro">形象、性格、话语习惯与声音，<br>组成一份持续使用的角色档案。</p>
+      <ol class="steps">
+        <li><span class="n">01</span><div><h3>完整形象</h3><p>多角度形象设定，保持一致的视觉风格。</p></div></li>
+        <li><span class="n">02</span><div><h3>人格与表达</h3><p>设定性格、价值观与常用语，形成稳定表达。</p></div></li>
+        <li><span class="n">03</span><div><h3>声音与表现</h3><p>定制专属声音，适配不同内容场景。</p></div></li>
+      </ol>
+    </div>
+    <div class="app reveal" role="img" aria-label="「我的角色」界面概念图：三个角色卡片，白狮·少女、白狮·少年、全栈创业">
+      <div class="app-win" aria-hidden="true">
+        <aside class="app-side">
+          <span class="logo"><svg><use href="#i-spark"/></svg><span data-brand>栖灵</span></span>
+          <span class="side-item on"><svg><use href="#i-user"/></svg>我的角色</span>
+          <span class="side-item"><svg><use href="#i-folder"/></svg>素材库</span>
+          <span class="side-item"><svg><use href="#i-monitor"/></svg>设备</span>
+          <div class="side-foot">
+            <span class="side-item"><span class="avatar">鸣</span>小鸣 ›</span>
+            <span class="side-item"><svg><use href="#i-gear"/></svg>设置</span>
+          </div>
+        </aside>
+        <div class="app-main">
+          <div class="app-top"><b>我的角色</b><span>完整形象 · 独立设定 · 多端陪伴</span><span class="btn btn-green">＋ 创建角色</span></div>
+          <div class="cards3">
+            <div class="ccard"><span class="badge">完整形象</span><div class="im"><img src="assets/img/girl.png" alt="" loading="lazy" width="304" height="672"></div><b>白狮 · 少女</b><div class="row"><span>编辑角色</span><i>＋</i></div></div>
+            <div class="ccard"><span class="badge">完整形象</span><div class="im"><img src="assets/img/boy.png" alt="" loading="lazy" width="340" height="672"></div><b>白狮 · 少年</b><div class="row"><span>编辑角色</span><i>＋</i></div></div>
+            <div class="ccard"><span class="badge">完整形象</span><div class="im im-wide"><img src="assets/img/ip-octopus.png" alt="" loading="lazy" width="320" height="272"></div><b>全栈创业</b><div class="row"><span>编辑角色</span><i>＋</i></div></div>
+          </div>
+        </div>
+      </div>
+      <span class="pill-note">概念设计</span>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · 从同一个角色，长出更多内容 -->
+<section class="sec content" id="content">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="kicker"><i></i>内容管线</p><h2>从同一个角色，长出更多内容。</h2><p class="sub">生成前读取角色定义，生成后核对形象、语气与表达。</p></div>
+      <p class="note">内容应用示意 · 非已交付成果</p>
+    </div>
+    <div class="pipe reveal">
+      <article class="pcard p-def" data-step="01">
+        <h3>角色定义</h3>
+        <div class="def">
+          <img src="assets/img/def-octopus.png" width="272" height="372" loading="lazy" alt="用户提供的 IP 形象「全栈创业」：戴耳机与眼镜的紫色章鱼">
+          <ul class="attrs">
+            <li><span class="ic"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><div><b>核心性格</b><small>积极乐观 · 专业可靠</small></div></li>
+            <li><span class="ic"><svg aria-hidden="true"><use href="#i-chat"/></svg></span><div><b>语言习惯</b><small>轻松易懂 · 鼓励互动</small></div></li>
+            <li><span class="ic"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><div><b>声音设定</b><small>清晰友好 · 富有活力</small></div></li>
+            <li><span class="ic"><svg aria-hidden="true"><use href="#i-grid"/></svg></span><div><b>视觉规范</b><small>固定造型 · 保持一致</small></div></li>
+          </ul>
+        </div>
+      </article>
+      <div class="outs">
+      <article class="pcard" data-step="02">
+        <h3>声音</h3>
+        <div class="voice-art"><img src="assets/img/voice-octopus.png" width="146" height="114" loading="lazy" alt="全栈创业角色"></div>
+        <div class="player" aria-label="试听界面示意，不播放音频">
+          <span class="pb" aria-hidden="true"><svg width="14" height="14" style="color:#fff"><use href="#i-play"/></svg></span>
+          <span class="wave" aria-hidden="true"><i style="height:30%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:75%"></i><i style="height:50%"></i><i style="height:90%"></i><i style="height:60%"></i><i style="height:35%"></i><i style="height:70%"></i><i style="height:100%"></i><i style="height:65%"></i><i style="height:45%"></i><i style="height:80%"></i><i style="height:50%"></i><i style="height:30%"></i><i style="height:60%"></i><i style="height:40%"></i><i style="height:25%"></i></span>
+        </div>
+        <p class="pcap">角色台词 · 试听示意</p>
+      </article>
+      <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      <article class="pcard" data-step="03">
+        <h3>视频</h3>
+        <div class="vid" id="vid">
+          <!-- 真实衍生视频（用户提供）：默认静音自动循环 0:02–0:06；点击播放键开声完整播放 -->
+          <video id="ocVideo" muted autoplay loop playsinline preload="metadata" poster="assets/img/poster-04s.jpg" aria-label="示例：同一 OC 角色的衍生短视频（创业主题，含普通话旁白）">
+            <source src="assets/oc-derivative.mp4" type="video/mp4">
+          </video>
+          <span class="tag">示例</span>
+          <button class="play" id="playBtn" type="button" aria-label="开声播放完整视频"><svg aria-hidden="true"><use href="#i-play"/></svg></button>
+          <button class="snd" id="soundBtn" type="button" aria-pressed="false">声音：关</button>
+        </div>
+        <p class="pcap">创业知识短片</p>
+      </article>
+      <span class="arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+      <article class="pcard" data-step="04">
+        <h3>动画</h3>
+        <div class="anim" role="img" aria-label="全栈创业角色的四个动作示意">
+          <img src="assets/img/anim-1.png" alt="" loading="lazy" width="180" height="156"><img src="assets/img/anim-2.png" alt="" loading="lazy" width="195" height="174"><img src="assets/img/anim-3.png" alt="" loading="lazy" width="174" height="156"><img src="assets/img/anim-4.png" alt="" loading="lazy" width="195" height="168">
+        </div>
+        <p class="pcap">动画</p>
+      </article>
+      </div>
+      <div class="check" role="list" aria-label="一致性校准项">
+        <b>一致性校准：</b><span role="listitem">形象</span><span role="listitem">人格</span><span role="listitem">台词</span><span role="listitem">声音</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · 客户案例 -->
+<section class="sec cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div><p class="kicker"><i></i>客户案例 · 用户提供形象</p><h2>不同的 IP，都有自己的表达。</h2></div>
+      <p class="note">展示已提供 IP 形象；<br>声音、视频与动画为应用方向示意。</p>
+    </div>
+    <div class="cases-grid reveal">
+      <article class="case"><div class="im"><img src="assets/img/ip-bailion.png" width="280" height="264" loading="lazy" alt="白狮：白发猫耳少女与少年"></div>
+        <div><h3>创业少年少女 · 白狮</h3><p class="sub">青春创业 IP</p><ul class="tags"><li>角色故事</li><li>语音</li><li>成长动画</li></ul></div></article>
+      <article class="case"><div class="im"><img src="assets/img/ip-octopus.png" width="320" height="272" loading="lazy" alt="全栈创业：紫色章鱼角色"></div>
+        <div><h3>全栈创业</h3><p class="sub">创业者的全能与全面</p><ul class="tags"><li>创业知识</li><li>视频</li><li>角色表达</li></ul></div></article>
+      <article class="case"><div class="im"><img src="assets/img/ip-teacher.png" width="304" height="252" loading="lazy" alt="周老师：棕色卷发、白衬衫的 Q 版人物"></div>
+        <div><h3>周老师</h3><p class="sub">教育博主的个人 IP</p><ul class="tags"><li>知识讲解</li><li>口播</li><li>教育内容</li></ul></div></article>
+      <article class="case"><div class="im"><img src="assets/img/ip-pets.png" width="376" height="220" loading="lazy" alt="高能十七岁：哈士奇、粉色小熊与白鸭三个角色"></div>
+        <div><h3>高能十七岁</h3><p class="sub">狗富贵 · 吴春汪 · 加油鸭</p><ul class="tags"><li>品牌故事</li><li>动画</li><li>活动内容</li></ul></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · 随身陪伴 -->
+<section class="comp" id="companion">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="kicker"><i></i>多端陪伴</p>
+      <h2>内容之外，TA 也可以陪在你身边。</h2>
+      <p class="intro">从屏幕里的互动，到随身设备里的陪伴。</p>
+      <div class="feats">
+        <div class="feat"><span class="ic"><svg aria-hidden="true"><use href="#i-phone"/></svg></span><div><b>手机与电脑</b><small>随时对话与创作</small></div></div>
+        <div class="feat"><span class="ic"><svg aria-hidden="true"><use href="#i-watch"/></svg></span><div><b>随身设备</b><small>把喜欢的角色带在身边</small></div></div>
+      </div>
+    </div>
+    <div class="dev-art reveal">
+      <div class="dev-frame">
+        <img src="assets/img/device-phone.png" width="532" height="420" loading="lazy" alt="外观示意：浅绿色猫耳形随身设备与手机，屏幕中都是白狮少年">
+        <span class="bubble" aria-hidden="true">今天也<br>一起加油吧！</span>
+      </div>
+      <p class="dev-cap">硬件外观与体验示意<br>· 指定设备适配规划</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CTA band + footer -->
+<section class="band" id="early-access" aria-labelledby="cta-title">
+  <svg class="band-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 360 0 1080 0 1440 60 Z" fill="currentColor"/></svg>
+  <span class="halo halo-a" aria-hidden="true"></span>
+  <span class="halo halo-b" aria-hidden="true"></span>
+  <div class="wrap">
+    <div class="reveal copy">
+      <h2 id="cta-title">让你的 IP，<br>开始下一次表达。</h2>
+      <p class="lead">加入内测，一起把角色设定<br>变成持续的创作与陪伴。</p>
+      <button class="btn btn-cream" type="button" data-apply>申请内测 <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+      <p class="note">产品筹备中，申请不代表获得测试资格。</p>
+    </div>
+    <div class="band-art reveal">
+      <svg class="deco" style="right:6%;top:4%;width:30px;height:30px" aria-hidden="true"><use href="#i-spark"/></svg>
+      <img src="assets/img/cta-group.png" width="832" height="508" loading="lazy" alt="用户提供的全部 IP 形象合影：白狮少女与少年、周老师、全栈创业章鱼、狗富贵、吴春汪与加油鸭">
+    </div>
+  </div>
+  <footer class="foot">
+    <div class="wrap">
+      <span class="logo"><svg aria-hidden="true"><use href="#i-spark"/></svg><span data-brand>栖灵</span></span>
+      <span class="sep" aria-hidden="true"></span>
+      <span class="sum">OC 创作 · 内容表达 · 随身陪伴</span>
+      <span class="right"><span id="footContact"></span>品牌暂名 · 概念设计 · <span id="ver">v1.1</span></span>
+    </div>
+  </footer>
+</section>
+</main>
+
+<!--
+  ⚠ 演示表单 / MOCK FORM — 不收集任何数据。
+  - 无 action、无 fetch/XHR、不写 localStorage/cookie；提交时 JS preventDefault，只做本地格式校验。
+  - 不显示虚假的“提交成功”。正式开放前需接入真实后端、邮箱确认与隐私说明（见 README）。
+-->
+<dialog class="apply" id="applyDlg" aria-labelledby="applyTitle">
+  <form class="apply-in" id="waitlist" novalidate method="dialog">
+    <button class="dlg-x" type="button" id="dlgClose" aria-label="关闭">×</button>
+    <h3 id="applyTitle">申请内测</h3>
+    <p class="muted" style="font-size:15px">留下邮箱，告诉我们你最想让角色实现什么。申请不保证获得资格，无需付款。</p>
+    <p class="demo-banner"><b>演示表单：</b>申请尚未开放，填写内容不会被发送或保存。</p>
+    <div class="f-row">
+      <label for="email">邮箱 <span class="muted" style="font-weight:400">（必填）</span></label>
+      <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" aria-describedby="emailErr">
+      <p class="err" id="emailErr" aria-live="polite"></p>
+    </div>
+    <fieldset><legend>你的身份（可选，可多选）</legend><div class="opts">
+      <label class="opt"><input type="checkbox" name="role" value="creator">创作者</label>
+      <label class="opt"><input type="checkbox" name="role" value="ip">IP 持有者 / 品牌</label>
+      <label class="opt"><input type="checkbox" name="role" value="asset">资产制作伙伴</label>
+      <label class="opt"><input type="checkbox" name="role" value="other">其他</label></div></fieldset>
+    <fieldset><legend>最想体验的能力（可选）</legend><div class="opts">
+      <label class="opt"><input type="checkbox" name="want" value="persona">角色设定</label>
+      <label class="opt"><input type="checkbox" name="want" value="voice">专属声音</label>
+      <label class="opt"><input type="checkbox" name="want" value="content">视频与动画</label>
+      <label class="opt"><input type="checkbox" name="want" value="device">随身设备</label></div></fieldset>
+    <div class="f-row">
+      <label for="note">给我们的一句话（可选）</label>
+      <textarea id="note" name="note" maxlength="300"></textarea>
+      <p class="hint">最多 300 字，请勿填写敏感个人信息。</p>
+    </div>
+    <div class="f-row">
+      <label class="consent"><input type="checkbox" id="consent">我已阅读隐私说明并同意用于本次申请。（隐私说明将在申请开放前公布）</label>
+      <p class="err" id="consentErr" aria-live="polite"></p>
+    </div>
+    <div class="dlg-actions"><button class="btn btn-green" type="submit" id="submitBtn">提交内测申请（演示）</button></div>
+    <p class="form-status" id="formStatus" role="status"></p>
+  </form>
+</dialog>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
