@@ -255,6 +255,7 @@
 <dialog class="apply" id="applyDlg" aria-labelledby="applyTitle">
   <form class="apply-in" id="waitlist" novalidate>
     <button class="dlg-x" type="button" id="dlgClose" aria-label="关闭">×</button>
+    <div id="applyForm">
     <h3 id="applyTitle">申请内测</h3>
     <p class="muted" style="font-size:15px">留下邮箱，告诉我们你最想让角色实现什么。申请不保证获得资格，无需付款。</p>
     <p class="demo-banner" id="applyNote"><b>名单：</b>提交后会记入内测申请表，只保存邮箱、身份、想体验的能力和一句话。</p>
@@ -284,6 +285,16 @@
     </div>
     <div class="dlg-actions"><button class="btn btn-green" type="submit" id="submitBtn">提交内测申请</button></div>
     <p class="form-status" id="formStatus" role="status"></p>
+    </div>
+    <div class="apply-done" id="applyDone" hidden>
+      <div class="done-stage"><img src="assets/img/girl-idle.gif" alt="" width="192" height="208"></div>
+      <p class="done-kicker">投递成功</p>
+      <h3 id="doneTitle">信收到啦，排队看中。</h3>
+      <p>你的申请已经放进栖灵的收件匣。角色设定还在慢慢翻，有回音会寄到下面这个邮箱。先别催更，也先别把「过审」写进人设。</p>
+      <p class="done-mail">回信邮箱<span id="doneMail"></span></p>
+      <p class="done-wait"><b>等待回信</b>申请不代表获得测试资格。</p>
+      <button class="btn btn-green" type="button" id="doneClose">好，我先去逛逛</button>
+    </div>
   </form>
 </dialog>
 

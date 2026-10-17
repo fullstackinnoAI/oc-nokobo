@@ -9,7 +9,7 @@
   /* 品牌名：唯一来源 assets/config.js */
   $$("[data-brand]").forEach(function (el) { el.textContent = CFG.brandName; });
   document.title = CFG.brandName + " · 一个角色，持续生长的内容";
-  $("#ver").textContent = CFG.pageVersion || "v1.7";
+  $("#ver").textContent = CFG.pageVersion || "v1.8";
   if (/\.github\.io$/.test(location.hostname)) {
     $$("a[href='/login']").forEach(function (el) {
       var li = el.closest && el.closest("li");
@@ -55,6 +55,24 @@
   });
   $("#dlgClose").addEventListener("click", function () { dlg.close(); });
   dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+  function showDone(address) {
+    $("#doneMail").textContent = address;
+    $("#applyForm").hidden = true;
+    $("#applyDone").hidden = false;
+    dlg.setAttribute("aria-labelledby", "doneTitle");
+    $("#doneClose").focus();
+  }
+  function resetApply() {
+    $("#applyForm").hidden = false;
+    $("#applyDone").hidden = true;
+    dlg.setAttribute("aria-labelledby", "applyTitle");
+    var st = $("#formStatus");
+    if (st) { st.textContent = ""; st.classList.remove("show"); }
+    var btn = $("#submitBtn");
+    if (btn) { btn.disabled = false; btn.textContent = "提交内测申请"; }
+  }
+  dlg.addEventListener("close", resetApply);
+  $("#doneClose").addEventListener("click", function () { dlg.close(); });
 
   /* 申请表：有 applyUrl 时写入飞书；没有地址时不发送，也不假装成功。 */
   var ROLE_LABEL = { creator: "创作者", ip: "IP 持有者 / 品牌", asset: "资产制作伙伴", other: "其他" };
@@ -82,7 +100,7 @@
     var wants = $$("input[name=want]:checked").map(function (el) { return WANT_LABEL[el.value] || el.value; });
     var btn = $("#submitBtn");
     btn.disabled = true;
-    btn.textContent = "正在提交…";
+    btn.textContent = "正在投递…";
     fetch(CFG.applyUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -101,12 +119,13 @@
       btn.disabled = false;
       btn.textContent = "提交内测申请";
       if (result.ok) {
-        st.textContent = "已收到。申请不代表获得测试资格，我们会用这个邮箱联系你。";
+        var address = email.value.trim();
         $("#waitlist").reset();
+        showDone(address);
       } else {
         st.textContent = result.message || "暂时没能提交，请稍后再试。";
+        st.classList.add("show");
       }
-      st.classList.add("show");
     }).catch(function () {
       btn.disabled = false;
       btn.textContent = "提交内测申请";

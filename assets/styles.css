@@ -487,6 +487,28 @@ textarea{min-height:84px;resize:vertical}
 .hint{font-size:12.5px;color:var(--ink-3);margin-top:4px}
 .form-status{display:none;margin-top:12px;font-size:14px;background:var(--mint);border-radius:12px;padding:10px 14px}
 .form-status.show{display:block}
+.apply-done{text-align:center;padding:8px 4px 4px}
+.apply-done h3{font-size:30px;line-height:1.3;margin:0 0 10px}
+.apply-done>p{font-size:15px;line-height:1.7;color:var(--ink-2)}
+.done-stage{
+  width:156px;height:168px;margin:0 auto 6px;
+  display:flex;align-items:flex-end;justify-content:center;
+  background:radial-gradient(circle at 50% 72%, #F3E7C8 0%, rgba(243,231,200,0) 70%);
+}
+.done-stage img{width:auto;height:150px;max-width:100%;object-fit:contain}
+.done-kicker{
+  margin:0 0 8px;font-size:12px;font-weight:700;letter-spacing:.16em;color:var(--green);
+}
+.done-mail{
+  margin:16px 0 12px;padding:12px 14px;border-radius:14px;background:#F7F4EE;
+  font-size:13px;letter-spacing:.04em;color:var(--ink-3);
+}
+.done-mail span{display:block;margin-top:4px;font-size:16px;font-weight:650;letter-spacing:0;color:var(--ink);word-break:break-all}
+.done-wait{margin-bottom:18px;font-size:13.5px}
+.done-wait b{
+  display:inline-block;margin-right:8px;padding:3px 9px;border-radius:999px;
+  background:var(--mint);color:var(--green);font-size:12px;letter-spacing:.08em;
+}
 .dlg-x{
   position:absolute;right:12px;top:12px;width:36px;height:36px;border-radius:50%;
   border:0;background:var(--bg-2);font-size:20px;line-height:1;cursor:pointer;color:var(--ink);
