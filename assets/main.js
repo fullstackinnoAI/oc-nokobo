@@ -9,7 +9,7 @@
   /* 品牌名：唯一来源 assets/config.js */
   $$("[data-brand]").forEach(function (el) { el.textContent = CFG.brandName; });
   document.title = CFG.brandName + " · 一个角色，持续生长的内容";
-  $("#ver").textContent = CFG.pageVersion || "v1.6";
+  $("#ver").textContent = CFG.pageVersion || "v1.7";
   if (/\.github\.io$/.test(location.hostname)) {
     $$("a[href='/login']").forEach(function (el) {
       var li = el.closest && el.closest("li");

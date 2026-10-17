@@ -1,5 +1,6 @@
 {
   "name": "oc-nokobo-apply",
   "main": "worker.js",
-  "compatibility_date": "2026-10-16"
+  "compatibility_date": "2026-10-16",
+  "account_id": "aace44659bc36fa0530927eb4e003ebd"
 }
